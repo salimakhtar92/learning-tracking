@@ -26,14 +26,6 @@ const AddLearnType = ({onChangeHandler, onSubmit, newData}) => {
           placeholder="Select learn type"
           name="learnType"
         />
-        {/* <input
-          className="time"
-          type="number"
-          name="time"
-          onChange={onChangeHandler} 
-          value={newData.time}
-          placeholder="Time"
-        /> */}
         <Dropdown 
           dropdownArray={TIMINGS}
           onChange={onChangeHandler} 

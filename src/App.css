@@ -1,5 +1,6 @@
 .App {
   margin: 0 5% 50px;
+  box-sizing: border-box;
 }
 
 .App-header h1 {
