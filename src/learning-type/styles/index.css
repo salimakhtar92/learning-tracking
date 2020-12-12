@@ -1,0 +1,17 @@
+.learn-type {
+  padding: 13px;
+}
+
+.learn-type-container {
+  margin-right: 25px;
+  padding: 10px;
+  width: 200px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .learn-type-container {
+    margin-right: 0;
+  }
+}

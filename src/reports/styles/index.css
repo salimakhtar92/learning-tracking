@@ -1,0 +1,15 @@
+.go-back {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+
+.reports-container {
+  margin-bottom: 50px;
+}
+
+.reportsWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
