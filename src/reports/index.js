@@ -7,14 +7,15 @@ import { YEARS, MONTHS } from '../app-constant';
 import './styles/index.css';
 
 const Reports = ({records = []}) => {
-  console.log('records:', records)
   const currentYear = new Date().getFullYear();
   const currentMonth = MONTHS[new Date().getMonth()];
-  console.log('currentYear', currentYear);
   const [year, setYear] = useState(currentYear);
   const janRecords = [], febRecords = [], marRecords = [], aprRecords = [], mayRecords = [], junRecords = [];
   const julRecords = [], augRecords = [], sepRecords = [], octRecords = [], novRecords = [], decRecords = [];
+  let totalHours = 0;
+  
   records.forEach(record => {
+    totalHours += record.date.startsWith(year) && parseFloat(record.time); 
     if(record.date.startsWith(`${year}-01`)) {
       janRecords.push(record);
     } else if(record.date.startsWith(`${year}-02`)) {
@@ -51,6 +52,7 @@ const Reports = ({records = []}) => {
       <div className="go-back">
         <Link to='/'>Go Back</Link>
       </div>
+      <h2>Total - {totalHours}Hrs in the year {year}</h2>
       <Dropdown 
          dropdownArray={YEARS}
          onChange={onYearChangeHandler} 

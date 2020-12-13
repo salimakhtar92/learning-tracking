@@ -29,7 +29,11 @@ const TimingList = ({list, isTileView = false, month, isItCurrentMonth}) => {
   if(isTileView) {
     return (
       <div className={`tileContainer ${isItCurrentMonth && 'selectedTile'}`}>
-        <h3>{month} - Total: {totalHrs}Hrs</h3>
+        <h3>{month} - Total: {totalHrs}{totalHrs < 2 ? 'Hr' : 'Hrs'}</h3>
+        <div className="timeContainer">
+          <span>{mappingLearType['html']}</span>
+          <span>{html}h</span>
+        </div>
         <div className="timeContainer">
           <span>{mappingLearType['css']}</span>
           <span>{css}h</span>
@@ -63,7 +67,7 @@ const TimingList = ({list, isTileView = false, month, isItCurrentMonth}) => {
   }
   return (
     <div className="timeWrapper">
-      <span>Total: {totalHrs}Hrs</span>
+      <span>Total: {totalHrs}{totalHrs < 2 ? 'Hr' : 'Hrs'}</span>
       <span>{mappingLearType['html']}: {html}h</span>
       <span className={css === 0 ? 'danger' : ''}>{mappingLearType['css']}: {css}h</span>
       <span className={js === 0 ? 'danger' : ''}>{mappingLearType['js']}: {js}h</span>

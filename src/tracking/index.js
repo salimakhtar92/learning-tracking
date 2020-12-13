@@ -21,6 +21,7 @@ const Tracking = ({records, recordsRef}) => {
   
   const [newData, setNewData] = useState(initialValue);
   const [searchKey, setSearchKey] = useState('');
+
   const onChangeHandler = ({target: {name, value}}) => {
     setNewData({...newData, [name]: value});
   };
@@ -40,8 +41,6 @@ const Tracking = ({records, recordsRef}) => {
   const onChangeSearch = (event) => {
     setSearchKey(event.target.value)
   }
-
-  
 
   return (
     <div className="container-wrapper">
