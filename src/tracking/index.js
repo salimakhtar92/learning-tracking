@@ -83,7 +83,6 @@ const Tracking = ({records, recordsRef}) => {
       </div>
       {!!records && <TimingList list={records} />}
       {records ? (records.length ? <TrackingList list={[...records].filter(item => item.learnType.startsWith(searchKey)).reverse()} /> : ( 'No Record found')) : <Loader type="ThreeDots" color="#000000" width={50} height={50} />}
-      <ToastContainer />
     </div>
   );
 };
