@@ -30,12 +30,32 @@ const Tracking = ({records, recordsRef}) => {
     setSearchKey('')
   }
 
+  const validateRequestParam = () => {
+    const errorObject = [];
+    if(!newData.learnType) {
+      errorObject.push('learnType');
+    } else if(!newData.comment) {
+      errorObject.push('comment');
+    } else if(!newData.time) {
+      errorObject.push('time');
+    }
+    return !errorObject.length;
+  }
+
   const onSubmit = async (event) => {
-    console.log(newData)
-    event.preventDefault();
-    newData.createdAt = firebase.firestore.FieldValue.serverTimestamp();
-    await recordsRef.add(newData);
-    setNewData(initialValue)
+
+    if(validateRequestParam()) {
+      const auth = firebase.auth();
+      const  { displayName, email } = auth.currentUser; 
+      event.preventDefault();
+      newData.createdAt = firebase.firestore.FieldValue.serverTimestamp();
+      newData.userName = displayName;
+      newData.email = email;
+      await recordsRef.add(newData);
+      setNewData(initialValue)
+    } else {
+      console.log('All fields are required');
+    }
   };
 
   const onChangeSearch = (event) => {
@@ -63,6 +83,7 @@ const Tracking = ({records, recordsRef}) => {
       </div>
       {!!records && <TimingList list={records} />}
       {records ? (records.length ? <TrackingList list={[...records].filter(item => item.learnType.startsWith(searchKey)).reverse()} /> : ( 'No Record found')) : <Loader type="ThreeDots" color="#000000" width={50} height={50} />}
+      <ToastContainer />
     </div>
   );
 };

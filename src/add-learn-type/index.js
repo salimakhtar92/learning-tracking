@@ -2,12 +2,15 @@
 import { getCurrentDate, getThreeDaysAgoDate } from '../utils';
 import Dropdown from '../learning-type';
 import { LEARNING_TYPE, TIMINGS } from '../app-constant';
+
 import './styles/index.css';
 
 const AddLearnType = ({onChangeHandler, onSubmit, newData}) => {
+  
   const isDisabled = () => {
     return !newData.date || !newData.learnType || !newData.comment || !newData.time;
   };
+  
   return (
     <form className="container" onSubmit={onSubmit}>
         <input 
@@ -41,7 +44,7 @@ const AddLearnType = ({onChangeHandler, onSubmit, newData}) => {
           value={newData.comment} 
           placeholder="Write comment here..."
         />
-        <button disabled={isDisabled()} type="submit" className="add-button">Add</button>
+        <button disabled={isDisabled()} type="submit" className={`add-button ${isDisabled() ? "disableBtn" : ""}`}>Add</button>
       </form>
   )
 };

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 25px;
-  padding: 25px 0;
+  padding: 25px 0 0;
   flex-wrap: wrap;
   /* position: sticky;
   position: -webkit-sticky;
@@ -39,8 +39,8 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.add-button:hover {
-  background-color: rgb(10, 156, 192);;
+.disableBtn {
+  background-color: rgb(189, 186, 186);
 }
 
 .time {
@@ -55,17 +55,21 @@
     padding: 25px;
   }
  .comment {
-  width: 180px;
+  width: 300px;
   margin-right: 0;
+
  }
  .date {
   margin-right: 0;
+  width: 300px
  }
  .time {
   margin-right: 0;
+  width: 300px
  }
  .add-button {
    height: 40px;
+   width: 200px
  }
 }
 

@@ -40,4 +40,14 @@ export const monthMapping = {
 
 export const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export const YEARS = [2020, 2021, 2022, 2023, 2024, 2025]
+export const YEARS = [2020, 2021, 2022, 2023, 2024, 2025];
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyB5vY2W3JL7FHEISDqg7RMAeZpqcCLj7IQ",
+  authDomain: "learning-tracking-app.firebaseapp.com",
+  projectId: "learning-tracking-app",
+  storageBucket: "learning-tracking-app.appspot.com",
+  messagingSenderId: "775669904936",
+  appId: "1:775669904936:web:cbbb9d4a98499d0ee0e71d",
+  measurementId: "G-8FW7YY7J29"
+};
