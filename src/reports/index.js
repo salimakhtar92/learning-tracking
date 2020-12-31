@@ -52,7 +52,7 @@ const Reports = ({records = []}) => {
       <div className="go-back">
         <Link to='/'>Go Back</Link>
       </div>
-      <h2>Total - {totalHours}Hrs in the year {year}</h2>
+      <h2>Total - {Math.floor(totalHours/60)}{totalHours < 120 ? 'Hr' : 'Hrs'} {totalHours%60} Minutes in the year {year}</h2>
       <Dropdown 
          dropdownArray={YEARS}
          onChange={onYearChangeHandler} 

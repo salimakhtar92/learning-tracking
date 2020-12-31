@@ -10,7 +10,7 @@ const TrackingList = ({list}) => {
             <th>SNo</th>
             <th>Date</th>
             <th>Learning Type</th>
-            <th>Time</th>
+            <th>Time (in minutes)</th>
             <th>Comment</th>
           </tr>
         </thead>
@@ -20,7 +20,7 @@ const TrackingList = ({list}) => {
               <td>{index + 1}</td>
               <td>{listItem.date}</td>
               <td>{listItem.learnType}</td>
-              <td>{listItem.time}Hr</td>
+              <td>{listItem.time} Min</td>
               <td>{listItem.comment}</td>
             </tr>
           ))}

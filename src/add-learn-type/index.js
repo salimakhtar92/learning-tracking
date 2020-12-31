@@ -34,7 +34,7 @@ const AddLearnType = ({onChangeHandler, onSubmit, newData}) => {
           onChange={onChangeHandler} 
           value={newData.time} 
           name="time"
-          placeholder="Select Time(in Hr)"
+          placeholder="Select Time(in Minutes)"
         />
         <input 
           className="comment" 

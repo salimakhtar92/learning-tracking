@@ -10,7 +10,7 @@ export const LEARNING_TYPE = [
   'Interview Questions',
 ];
 
-export const TIMINGS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0];
+export const TIMINGS = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 150, 180, 210, 240];
 
 export const mappingLearType = {
   pl: 'Programmimg Logic',
